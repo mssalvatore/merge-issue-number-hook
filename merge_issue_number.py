@@ -1,19 +1,15 @@
 import sys
 import re
 
-def main():
-    try:
-        commit_msg_file = sys.argv[1]
-        commit_src = sys.argv[2]
-    except IndexError:
-        exit()
 
-    if commit_src != "merge":
+def main():
+    commit_msg_file = sys.argv[1]
+
+    if "MERGE_MSG" not in commit_msg_file:
         exit()
 
     with open(commit_msg_file, "r") as f:
         subject = f.readline()
-
 
     m = re.match(r"Merge branch '(\d+)-", subject)
     if not m:
@@ -25,6 +21,7 @@ def main():
         f.write(subject)
         f.write("\n")
         f.write(f"Issue #{issue_number}")
+
 
 if __name__ == "__main__":
     main()
