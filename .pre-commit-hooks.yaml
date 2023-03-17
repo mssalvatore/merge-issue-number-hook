@@ -1,0 +1,6 @@
+- id: merge-issue-number
+  name: "Merge Issue Number"
+  description: "Adds an Issue number from the branch to the commit message."
+  language: bash
+  entry: merge-issue-number.sh
+  stages: [prepare-commit-msg]
