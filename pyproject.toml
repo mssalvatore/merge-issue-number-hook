@@ -1,0 +1,16 @@
+repository = "https://github.com/mssalvatore/merge-issue-number-hook"
+
+[project]
+name = "merge-issue-number-hook"
+version = "v1.0.0"
+description = "A pre-commit hook to include the issue number in the merge commit body"
+authors = [
+    {name = "Mike Salvatore", email = "mike.s.salvatore@gmail.com"}
+]
+license = {text="GPLv3"}
+
+[project.scripts]
+merge-issue-number = "merge_issue_number:main"
+
+[build-system]
+requires = ["setuptools", "wheel"]
